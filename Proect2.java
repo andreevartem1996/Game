@@ -7,18 +7,19 @@ import java.util.Scanner;
 public class Proect2 {
     public static Scanner sc = new Scanner(System.in);
 
-    public static String slovo = random();
-    public static String slovo1 = shifr();
+    public String slovo = random();
+    public String slovo1 = shifr();
 
     public static void main(String[] args) {
-        System.out.println(slovo);
-        System.out.println(slovo1);
+        Proect2 proect2 = new Proect2();
+        System.out.println(proect2.slovo);
+        System.out.println(proect2.slovo1);
 
-        vhodVigru();
-        System.out.println();
+        proect2.vhodVigru();
+
     }
 
-    public static String random() {
+    public String random() {
         var random = new SecureRandom();
         var list = Arrays.asList("система", "город", "деньги", "машина", "возможность", "результат", "область", "группа",
                 "развитие", "средство", "качество", "действие", "государство", "любовь", "взгляд", "школа", "деятельность");
@@ -26,7 +27,7 @@ public class Proect2 {
         return s;
     }
 
-    public static String shifr() {
+    public String shifr() {
         String s = "";
         for (int i = 0; i < slovo.length(); i++) {
             s += "*";
@@ -35,7 +36,7 @@ public class Proect2 {
 
     }
 
-    public static void vhodVigru() {
+    public void vhodVigru() {
 
         while (true) {
             System.out.println("[N]ew game or [E]xit");
@@ -85,6 +86,9 @@ public class Proect2 {
                         System.out.println();
                         System.out.println("Вы проиграли!");
                         System.out.println("Слово было: " + slovo);
+
+                        setSlovo();
+                        setSlovo2();
                         break;
                     }
                 }
@@ -93,10 +97,26 @@ public class Proect2 {
                     System.out.println();
                     System.out.println("Вы выиграли!!!");
                     System.out.println();
+
+                    setSlovo();
+                    setSlovo2();
                     break;
                 }
             }
         }
     }
-}
 
+    public void setSlovo(){
+        this.slovo = random();
+    }
+    public void setSlovo2(){
+        this.slovo1 = shifr();
+    }
+}
+/*
+ * 1.При букве e заканчивать программу
+ * 2.Все буквы
+ * 3.Вы такую букву вводил + не увеличивать кол-во ошибок
+ * 4.Если ввел больше 1 буквы или не одной буквы,сказать что надо воодить 1 букву
+ *
+ * */
