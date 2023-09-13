@@ -7,19 +7,18 @@ import java.util.Scanner;
 public class Proect2 {
     public static Scanner sc = new Scanner(System.in);
 
-    public String slovo = random();
-    public String slovo1 = shifr();
+    public static String slovo = random();
+    public static String slovo1 = shifr();
 
     public static void main(String[] args) {
-        Proect2 proect2 = new Proect2();
-        System.out.println(proect2.slovo);
-        System.out.println(proect2.slovo1);
 
-        proect2.vhodVigru();
+        System.out.println(slovo);
+        System.out.println(slovo1);
+        vhodVigru();
 
     }
 
-    public String random() {
+    public static String random() {
         var random = new SecureRandom();
         var list = Arrays.asList("система", "город", "деньги", "машина", "возможность", "результат", "область", "группа",
                 "развитие", "средство", "качество", "действие", "государство", "любовь", "взгляд", "школа", "деятельность");
@@ -27,7 +26,7 @@ public class Proect2 {
         return s;
     }
 
-    public String shifr() {
+    public static String shifr() {
         String s = "";
         for (int i = 0; i < slovo.length(); i++) {
             s += "*";
@@ -36,7 +35,7 @@ public class Proect2 {
 
     }
 
-    public void vhodVigru() {
+    public static void vhodVigru() {
 
         while (true) {
             System.out.println("[N]ew game or [E]xit");
@@ -106,13 +105,14 @@ public class Proect2 {
         }
     }
 
-    public void setSlovo(){
-        this.slovo = random();
+    public static void setSlovo(){
+        slovo = random();
     }
-    public void setSlovo2(){
-        this.slovo1 = shifr();
+    public static void setSlovo2(){
+        slovo1 = shifr();
     }
 }
+
 /*
  * 1.При букве e заканчивать программу
  * 2.Все буквы
