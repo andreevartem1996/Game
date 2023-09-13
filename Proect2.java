@@ -15,7 +15,7 @@ public class Proect2 {
         System.out.println(slovo1);
 
         vhodVigru();
-
+        System.out.println();
     }
 
     public static String random() {
