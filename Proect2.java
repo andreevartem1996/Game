@@ -16,9 +16,7 @@ public class Proect2 {
 
         vhodVigru();
 
-
     }
-
 
     public static String random() {
         var random = new SecureRandom();
@@ -61,8 +59,11 @@ public class Proect2 {
 
             while (true) {
 
-                System.out.println("Введите букву");
-                s = sc.nextLine();
+                do {
+                    System.out.println("Введите букву");
+                    s = sc.nextLine();
+
+                } while (s.equals(""));
 
                 char lett = s.charAt(0);
                 int index = -1;
@@ -75,22 +76,20 @@ public class Proect2 {
 
                 boolean isExist = slovo.indexOf(lett) != -1;
 
-                    if (!isExist) {
-                        System.out.println("Такой буквы в слове нет: " + lett);
+                if (!isExist) {
+                    System.out.println("Такой буквы в слове нет: " + lett);
 
-                        if (z < k) {
-                            k--;
-                            System.out.println("Ошибок осталось: " + k);
-                        }
-                        if (z >= k) {
-                            System.out.println();
-                            System.out.println("Вы проиграли!");
-                            System.out.println();
-                            break;
-                        }
+                    k--;
+                    System.out.println("Ошибок осталось: " + k);
+                    if (z >= k) {
+                        System.out.println();
+                        System.out.println("Вы проиграли!");
+                        System.out.println("Слово было: " + slovo);
+                        break;
                     }
+                }
                 boolean i = slovo1.contains("*");
-                if (i == false) {
+                if (!i) {
                     System.out.println();
                     System.out.println("Вы выиграли!!!");
                     System.out.println();
@@ -100,3 +99,4 @@ public class Proect2 {
         }
     }
 }
+
